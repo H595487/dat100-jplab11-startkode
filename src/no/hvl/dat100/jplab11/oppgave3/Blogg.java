@@ -71,8 +71,8 @@ public class Blogg {
 		
 
 		if (!finnes(innlegg) && getAntall() < innleggTabell.length) {
-			innleggTabell[nesteLedig++] = innlegg;
-			
+			innleggTabell[nesteLedig] = innlegg;
+			nesteLedig++;
 			return true;
 			
 		}
@@ -82,19 +82,11 @@ public class Blogg {
 
 	public String toString() {
 		String s = nesteLedig + "\n";
-		for (Innlegg i : innleggTabell) {
-			s += i.toString();
+		for (int i=0; i<nesteLedig; i++) {
+			s += innleggTabell[i].toString();
 		}
 		return s;
-//		String svar = getAntall() + "\n";
-//		
-//
-//		for (int i = 0; i < getAntall(); i++) {
-//
-//			svar += innleggTabell[i].toString();
-//
-//		}
-//		return svar;
+
 		
 	}
 
