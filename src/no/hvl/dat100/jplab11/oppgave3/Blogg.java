@@ -81,15 +81,20 @@ public class Blogg {
 	}
 
 	public String toString() {
-		String svar = getAntall() + "\n";
-		
-
-		for (int i = 0; i < getAntall(); i++) {
-
-			svar += innleggTabell[i].toString();
-
+		String s = nesteLedig + "\n";
+		for (Innlegg i : innleggTabell) {
+			s += i.toString();
 		}
-		return svar;
+		return s;
+//		String svar = getAntall() + "\n";
+//		
+//
+//		for (int i = 0; i < getAntall(); i++) {
+//
+//			svar += innleggTabell[i].toString();
+//
+//		}
+//		return svar;
 		
 	}
 
